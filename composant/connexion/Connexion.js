@@ -27,7 +27,7 @@ export default function Connexion({ user }) {
         <Name>
           {first} {last}
         </Name>
-        <Button onClick={() => router.push("/dashboard")}>My dashbord </Button>
+        <Button onClick={() => router.push("/dashboard")}>My dashboard </Button>
       </Card>
     </>
   );
