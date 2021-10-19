@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import {
   Card,
   ComponentImage,
@@ -5,22 +7,27 @@ import {
   P,
   Name,
   Logo,
+  Button,
 } from "./Connexion.style";
 
-export default function Connexion() {
+export default function Connexion({ user }) {
+  const router = useRouter();
+  const { name } = user.results[0];
+  const { first, last } = name;
+  const picture = user.results[0].picture.large;
+
   return (
     <>
       <Logo>Mansa</Logo>
       <Card>
         <ComponentImage>
-          <ImageElement
-            img
-            src="/media/cc0-images/grapefruit-slice-332-332.jpg"
-          />
+          <ImageElement img src={picture} alt="image" />
         </ComponentImage>
         <P>Hi, My name is</P>
-        <Name>Shadd</Name>
-        <button>Acceder à mon ....</button>
+        <Name>
+          {first} {last}
+        </Name>
+        <Button onClick={() => router.push("/dashboard")}>My dashbord </Button>
       </Card>
     </>
   );

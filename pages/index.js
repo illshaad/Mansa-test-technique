@@ -1,5 +1,17 @@
 import Connexion from "../composant/connexion/Connexion";
 
-export default function Home() {
-  return <Connexion />;
+import { getDataUserRandom } from "../service/randomUser";
+
+export default function Home({ userRandom }) {
+  return <Connexion user={userRandom} />;
+}
+
+export async function getStaticProps() {
+  const userRandom = await getDataUserRandom();
+  return {
+    revalidate: 1,
+    props: {
+      userRandom,
+    },
+  };
 }
