@@ -6,8 +6,8 @@ import {
   ImageElement,
   P,
   Name,
-  Logo,
   Button,
+  Logo,
 } from "./Connexion.style";
 
 export default function Connexion({ user }) {
@@ -18,7 +18,9 @@ export default function Connexion({ user }) {
 
   return (
     <>
-      <Logo>Mansa</Logo>
+      <header>
+        <Logo>Mansa</Logo>
+      </header>
       <Card>
         <ComponentImage>
           <ImageElement img src={picture} alt="image" />

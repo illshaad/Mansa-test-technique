@@ -1,4 +1,4 @@
-import Header from "../../composant/connexion/Dashboard/Header";
+import Header from "../../composant/dashboard/Header";
 import { getDataUserRandom } from "../../service/randomUser";
 
 export default function HomeDashboard({ userRandom }) {

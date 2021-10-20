@@ -1,33 +1,32 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  margin-top: 15%;
   padding: 20px 0;
-  width: 50%;
+  width: 40%;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0px 0 4px rgb(99 71 209);
+  box-shadow: 0px 0px 9px white;
   text-align: center;
-  margin: 0 auto;
+  margin: 250px auto 0 auto;
 `;
 
 export const ComponentImage = styled.div`
   padding: 3px;
-  width: 145px;
-  height: 145px;
+  width: ${({ width }) => width || "135px"};
+  height: ${({ height }) => height || "145px"};
   border-radius: 100%;
   margin-bottom: 30px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   margin: 0 auto;
 `;
 export const ImageElement = styled.img`
-  width: 135px;
+  width: ${({ width }) => width || "135px"};
   border-radius: 100%;
 `;
 
 export const P = styled.p`
-  color: #999;
-  font-size: 18px;
+  color: ${({ color }) => color || "#999"};
+  font-size: ${({ fontSize }) => fontSize || "18px"};
   margin-top: 10px;
 `;
 
@@ -37,10 +36,11 @@ export const Name = styled.p`
   margin: 5px;
 `;
 
-export const Logo = styled.p`
+export const Logo = styled.div`
   color: #6341d1;
   font-size: 30px;
-  margin-left: 15px;
+  margin-left: 30px;
+  padding-top: 30px;
 `;
 
 export const Button = styled.a`
