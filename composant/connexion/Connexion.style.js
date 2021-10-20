@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  padding: 20px 0;
-  width: 40%;
+  padding: ${({ padding }) => padding || "20px 0px"};
+  width: ${({ width }) => width || "40%"};
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 0px 9px white;
   text-align: center;
-  margin: 250px auto 0 auto;
+  margin: ${({ margin }) => margin || "250px auto 0 auto"};
 `;
 
 export const ComponentImage = styled.div`
@@ -27,7 +27,9 @@ export const ImageElement = styled.img`
 export const P = styled.p`
   color: ${({ color }) => color || "#999"};
   font-size: ${({ fontSize }) => fontSize || "18px"};
-  margin-top: 10px;
+  margin-top: ${({ marginTop }) => marginTop || "10px"};
+  text-align: ${({ textAlign }) => textAlign || "center"};
+  font-weight: ${({ fontWeight }) => fontWeight || null};
 `;
 
 export const Name = styled.p`
@@ -55,5 +57,5 @@ export const Button = styled.a`
   display: flex;
   justify-content: center;
   margin: 5px auto;
-  cursor: pointer;
+  cursor: ${({ cursor }) => cursor || null};
 `;
