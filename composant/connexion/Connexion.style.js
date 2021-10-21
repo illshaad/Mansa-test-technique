@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Card = styled.div`
   padding: ${({ padding }) => padding || "20px 0px"};
   width: ${({ width }) => width || "40%"};
+  height: ${({ height }) => height || "40%"};
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0px 0px 9px white;
+  box-shadow: 0px 0px 3px #6347d1;
   text-align: center;
   margin: ${({ margin }) => margin || "250px auto 0 auto"};
 `;
@@ -16,7 +17,6 @@ export const ComponentImage = styled.div`
   height: ${({ height }) => height || "145px"};
   border-radius: 100%;
   margin-bottom: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   margin: 0 auto;
 `;
 export const ImageElement = styled.img`
@@ -30,6 +30,8 @@ export const P = styled.p`
   margin-top: ${({ marginTop }) => marginTop || "10px"};
   text-align: ${({ textAlign }) => textAlign || "center"};
   font-weight: ${({ fontWeight }) => fontWeight || null};
+  padding-top: ${({ paddingTop }) => paddingTop || null};
+  border-top: ${({ borderTop }) => borderTop || null};
 `;
 
 export const Name = styled.p`
@@ -40,9 +42,9 @@ export const Name = styled.p`
 
 export const Logo = styled.div`
   color: #6341d1;
-  font-size: 30px;
-  margin-left: 30px;
-  padding-top: 30px;
+  font-size: ${({ fontSize }) => fontSize || null};
+  margin-left: ${({ marginLeft }) => marginLeft || null};
+  padding-top: ${({ paddingTop }) => paddingTop || null};
 `;
 
 export const Button = styled.a`

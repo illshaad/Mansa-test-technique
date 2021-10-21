@@ -1,4 +1,4 @@
-import Header from "../../composant/dashboard/Header";
+import Home from "../../composant/dashboard/Home";
 
 import {
   getDataUserRandom,
@@ -12,7 +12,7 @@ export default function HomeDashboard({
   dataAccounts,
 }) {
   return (
-    <Header
+    <Home
       user={userRandom}
       siretMansa={siretMansa}
       dataAccounts={dataAccounts}
@@ -24,6 +24,7 @@ export async function getStaticProps() {
   const userRandom = await getDataUserRandom();
   const siretMansa = await getDataSiret();
   const dataAccounts = await getDataAccounts();
+
   return {
     revalidate: 1,
     props: {

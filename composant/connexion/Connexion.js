@@ -13,13 +13,15 @@ import {
 export default function Connexion({ user }) {
   const router = useRouter();
   const { name } = user.results[0];
-  const { first, last } = name;
+  const { first, last, title } = name;
   const picture = user.results[0].picture.large;
 
   return (
     <>
       <header>
-        <Logo>Mansa</Logo>
+        <Logo fontSize="30px" marginLeft="30px" paddingTop="30px">
+          Mansa
+        </Logo>
       </header>
       <Card>
         <ComponentImage>
@@ -29,7 +31,14 @@ export default function Connexion({ user }) {
         <Name>
           {first} {last}
         </Name>
-        <Button cursor={"pointer"} onClick={() => router.push("/dashboard")}>
+        <Button
+          cursor={"pointer"}
+          onClick={() =>
+            router.push(
+              `/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`
+            )
+          }
+        >
           My dashboard
         </Button>
       </Card>

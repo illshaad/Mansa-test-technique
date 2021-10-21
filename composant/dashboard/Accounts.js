@@ -1,6 +1,6 @@
 import React from "react";
 import ReusedCard from "../../utils/ReusedCard";
-import { P, Button } from "../connexion/Connexion.style";
+import { P } from "../connexion/Connexion.style";
 import { GridElement } from "./index.style";
 
 export default function Accounts({ newData }) {
@@ -11,16 +11,20 @@ export default function Accounts({ newData }) {
         fontSize="20px"
         color="black"
         textAlign="left"
-        marginTop="50px"
+        marginTop="40px"
+        paddingTop="10px"
+        borderTop="1px solid #999"
       >
-        Accounts
+        My Accounts
       </P>
 
-      <GridElement flexWrap="wrap">
+      <GridElement gap="5% " flexWrap="wrap">
         {newData.map((e, key) => (
           <ReusedCard
+            key={key}
             margin="60px auto 0 auto"
             width="300px"
+            height="170px"
             title="Account"
             information="Accounts n° :"
             informationTwo="Balance :"

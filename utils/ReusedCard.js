@@ -1,10 +1,11 @@
 import React from "react";
 import { P, Card } from "../composant/connexion/Connexion.style";
-import { FlexElement } from "../composant/dashboard/index.style";
+import { FlexElement, Span } from "../composant/dashboard/index.style";
 
 export default function ReusedCard({
   margin,
   width,
+  height,
   title,
   information,
   informationTwo,
@@ -14,22 +15,19 @@ export default function ReusedCard({
   dataThree,
 }) {
   return (
-    <Card margin={margin} width={width}>
+    <Card margin={margin} width={width} height={height}>
       <P fontWeight="bold" fontSize="20px" color="black">
         {title}
       </P>
-      <FlexElement justifyContent="center">
-        <div>
-          <P>{information}</P>
-          <P>{informationTwo}</P>
-          <P>{informationThree}</P>
-        </div>
-        <div>
-          <P textAlign="left">{data}</P>
-          <P textAlign="left">{dataTwo}</P>
-          <P textAlign="left">{dataThree}</P>
-        </div>
-      </FlexElement>
+      <P>
+        {information} <Span>{data}</Span>
+      </P>
+      <P>
+        {informationTwo} <Span>{dataTwo}</Span>
+      </P>
+      <P>
+        {informationThree} <Span>{dataThree}</Span>
+      </P>
     </Card>
   );
 }
