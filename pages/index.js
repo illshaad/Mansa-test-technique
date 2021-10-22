@@ -1,6 +1,6 @@
 import Connexion from "../composant/connexion/Connexion";
 
-import { getDataUserRandom } from "../service/randomUser";
+import { getDataUserRandom } from "../service/getApi";
 
 export default function Home({ userRandom }) {
   return <Connexion user={userRandom} />;

@@ -1,7 +1,6 @@
 import React from "react";
 import Compagny from "./Compagny";
 import Accounts from "./Accounts";
-
 export default function Information({
   first,
   denomination,

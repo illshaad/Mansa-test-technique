@@ -10,11 +10,12 @@ export default function Home({ siretMansa, dataAccounts }) {
   const router = useRouter();
   const { first, last, title, picture } = router.query;
 
-  const getAccountAndCurrent = dataAccounts.map((e) => {
+  const formatData = dataAccounts.map((e) => {
     return {
       accountId: e.account_id,
       accountNumber: e.account_number,
       current: e.current,
+      currency: e.currency,
     };
   });
 
@@ -26,7 +27,7 @@ export default function Home({ siretMansa, dataAccounts }) {
         denomination={denomination}
         siret={siret}
         geo_adresse={geo_adresse}
-        newData={getAccountAndCurrent}
+        newData={formatData}
       />
     </FlexComponent>
   );

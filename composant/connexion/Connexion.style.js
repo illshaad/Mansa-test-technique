@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  padding: ${({ padding }) => padding || "20px 0px"};
+  padding: ${({ padding }) => padding || null};
   width: ${({ width }) => width || "40%"};
   height: ${({ height }) => height || "40%"};
   background: #fff;
@@ -30,7 +30,7 @@ export const P = styled.p`
   margin-top: ${({ marginTop }) => marginTop || "10px"};
   text-align: ${({ textAlign }) => textAlign || "center"};
   font-weight: ${({ fontWeight }) => fontWeight || null};
-  padding-top: ${({ paddingTop }) => paddingTop || null};
+  padding: ${({ padding }) => padding || null};
   border-top: ${({ borderTop }) => borderTop || null};
 `;
 

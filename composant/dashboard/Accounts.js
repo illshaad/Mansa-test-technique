@@ -12,7 +12,7 @@ export default function Accounts({ newData }) {
         color="black"
         textAlign="left"
         marginTop="40px"
-        paddingTop="10px"
+        padding="15px 0px"
         borderTop="1px solid #999"
       >
         My Accounts
@@ -20,17 +20,23 @@ export default function Accounts({ newData }) {
 
       <GridElement gap="5% " flexWrap="wrap">
         {newData.map((e, key) => (
-          <ReusedCard
-            key={key}
-            margin="60px auto 0 auto"
-            width="300px"
-            height="170px"
-            title="Account"
-            information="Accounts n° :"
-            informationTwo="Balance :"
-            data={e.accountNumber}
-            dataTwo={e.current}
-          />
+          <>
+            <ReusedCard
+              key={key}
+              accountId={e.accountId}
+              padding="0 20px"
+              margin="30px auto 0 auto"
+              width="300px"
+              height="170px"
+              title="Account"
+              textAlign="start"
+              information="Accounts n° :"
+              informationTwo="Balance :"
+              data={e.accountNumber}
+              dataTwo={e.current}
+              device={e.currency}
+            />
+          </>
         ))}
       </GridElement>
     </>

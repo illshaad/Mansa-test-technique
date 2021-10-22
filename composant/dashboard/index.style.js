@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const ContainerMenu = styled.div`
   background-color: white;
-  width: 14%;
-  height: 100vh;
+  width: ${({ width }) => width || null};
+  height: ${({ height }) => height || null};
   box-shadow: 0px 0px white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding-top: 30px;
+  gap: 10px;
+  padding-top: ${({ paddingTop }) => paddingTop || null};
   color: white;
 `;
 
@@ -22,10 +22,11 @@ export const FlexComponent = styled.div`
 `;
 
 export const FlexElement = styled.div`
-  text-align: center;
+  text-align: ${({ textAlign }) => textAlign || "center"};
   display: flex;
   justify-content: ${({ justifyContent }) => justifyContent || null};
   gap: ${({ gap }) => gap || "5px"};
+  flex-direction: ${({ flexDirection }) => flexDirection || null};
 `;
 
 export const GridElement = styled.div`
@@ -36,5 +37,5 @@ export const GridElement = styled.div`
 
 export const Span = styled.span`
   font-weight: 500;
-  color: #6347d1;
+  color: ${({ color }) => color || "#6347d1"};
 `;

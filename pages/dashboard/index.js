@@ -4,7 +4,7 @@ import {
   getDataUserRandom,
   getDataSiret,
   getDataAccounts,
-} from "../../service/randomUser";
+} from "../../service/getApi";
 
 export default function HomeDashboard({
   userRandom,

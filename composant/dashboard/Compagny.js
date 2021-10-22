@@ -10,11 +10,14 @@ export default function Compagny({ first, denomination, siret, geo_adresse }) {
         <P fontWeight="bold" fontSize="20px" color="black">
           Good Morning,
         </P>
-        <P fontSize="20px">{first}</P>
+        <P fontSize="20px" color="#6347D1" fontWeight="600">
+          {first}
+        </P>
       </FlexElement>
       <ReusedCard
         margin="20px auto 0 10px"
         width="500px"
+        padding="20px 0"
         title="Information my Compagny"
         information="Name :"
         informationTwo="Siret :"
