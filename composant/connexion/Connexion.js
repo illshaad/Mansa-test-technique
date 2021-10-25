@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 
 import {
+  Container,
   Card,
   ComponentImage,
   ImageElement,
@@ -17,7 +18,7 @@ export default function Connexion({ user }) {
   const picture = user.results[0].picture.large;
 
   return (
-    <>
+    <Container>
       <header>
         <Logo fontSize="30px" marginLeft="30px" paddingTop="30px">
           Mansa
@@ -42,6 +43,6 @@ export default function Connexion({ user }) {
           My dashboard
         </Button>
       </Card>
-    </>
+    </Container>
   );
 }

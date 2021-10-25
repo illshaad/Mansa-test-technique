@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { device } from "../../styles/mediaQueriesBreakpoints";
+
+export const Container = styled.div`
+  height: 100vh;
+  background-image: url("/background.jpg");
+`;
 
 export const Card = styled.div`
   padding: ${({ padding }) => padding || null};
@@ -9,6 +15,13 @@ export const Card = styled.div`
   box-shadow: 0px 0px 3px #6347d1;
   text-align: center;
   margin: ${({ margin }) => margin || "250px auto 0 auto"};
+  @media ${device.tablet} {
+    height: 190px;
+  }
+  @media ${device.mobileM} {
+    height: 210px;
+    width: 330px;
+  }
 `;
 
 export const ComponentImage = styled.div`
@@ -32,6 +45,9 @@ export const P = styled.p`
   font-weight: ${({ fontWeight }) => fontWeight || null};
   padding: ${({ padding }) => padding || null};
   border-top: ${({ borderTop }) => borderTop || null};
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
 `;
 
 export const Name = styled.p`
@@ -42,9 +58,13 @@ export const Name = styled.p`
 
 export const Logo = styled.div`
   color: #6341d1;
-  font-size: ${({ fontSize }) => fontSize || null};
+  font-size: 40px;
   margin-left: ${({ marginLeft }) => marginLeft || null};
   padding-top: ${({ paddingTop }) => paddingTop || null};
+  @media ${device.mobileM} {
+    font-size: 18px;
+    font-weight: 800;
+  }
 `;
 
 export const Button = styled.a`
@@ -60,4 +80,7 @@ export const Button = styled.a`
   justify-content: center;
   margin: 5px auto;
   cursor: ${({ cursor }) => cursor || null};
+  @media ${device.tablet} {
+    height: 30px;
+  }
 `;

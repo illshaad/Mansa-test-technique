@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-import Axios from "axios";
+import React from "react";
+import styled from "styled-components";
 import { P, Card } from "../composant/connexion/Connexion.style";
 import { Span } from "../composant/dashboard/index.style";
+import { device } from "../styles/mediaQueriesBreakpoints";
 import ReusedModal from "./ReusedModal";
 
 export default function ReusedCard({
@@ -22,7 +23,7 @@ export default function ReusedCard({
   dataModal,
 }) {
   return (
-    <Card margin={margin} width={width} height={height} padding={padding}>
+    <CardStyle margin={margin} width={width} height={height} padding={padding}>
       <P fontWeight="bold" fontSize="20px" color="black">
         {title}
       </P>
@@ -35,7 +36,13 @@ export default function ReusedCard({
       <P textAlign={textAlign}>
         {informationThree} <Span>{dataThree}</Span>
       </P>
-      <ReusedModal dataModal={dataModal} accountId={accountId} />
-    </Card>
+      {accountId && <ReusedModal dataModal={dataModal} accountId={accountId} />}
+    </CardStyle>
   );
 }
+
+const CardStyle = styled(Card)`
+  @media ${device.tablet} {
+    margin: 15px auto 0 auto;
+  }
+`;

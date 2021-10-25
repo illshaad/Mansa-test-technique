@@ -31,7 +31,6 @@ export default function ReusedCard({ accountId }) {
 
   const getDataId = () => {
     return getDataAccountsId(accountId).then((data) => {
-      console.log(data, "?????");
       const structurationData = data.map((e) => {
         return {
           amount: e.amount,
@@ -43,8 +42,14 @@ export default function ReusedCard({ accountId }) {
     });
   };
 
+  const replaceNegativeAmountsGreen = (amounts) => {
+    if (amounts) {
+      return parseInt(amounts.toString().toString().replace(/-/g, ""));
+    }
+  };
+
   return (
-    <div>
+    <>
       <Button
         cursor="pointer"
         onClick={() => {
@@ -61,16 +66,17 @@ export default function ReusedCard({ accountId }) {
         contentLabel="Modal"
       >
         <P fontSize="20px" color="#6341D1">
-          Recent Transaction
+          Recent Transactions
         </P>
         <ContainerMenu>
           <FlexElement flexDirection="column">
-            {myNewData.map((e) => (
-              <div>
+            {myNewData.map((e, key) => (
+              <div key={key}>
                 <P fontSize={13}>
-                  {e.transaction} <Span>Succeeded</Span>{" "}
+                  {e.transaction} <Span>Succeeded</Span>
                   <Span color={e.transaction === "CREDIT" ? "green" : "red"}>
-                    {e.amount}
+                    {" "}
+                    {replaceNegativeAmountsGreen(e.amount)} GBP
                   </Span>{" "}
                   <Span>{e.time}</Span>
                 </P>
@@ -80,6 +86,6 @@ export default function ReusedCard({ accountId }) {
         </ContainerMenu>
         <button onClick={closeModal}>close</button>
       </Modal>
-    </div>
+    </>
   );
 }

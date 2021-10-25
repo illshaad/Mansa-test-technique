@@ -2,8 +2,12 @@ import React from "react";
 import ReusedCard from "../../utils/ReusedCard";
 import { P } from "../connexion/Connexion.style";
 import { GridElement } from "./index.style";
+import { screensizeInt } from "../../styles/mediaQueriesBreakpoints";
+import useScreenSize from "../../hook/useScreenSize";
 
 export default function Accounts({ newData }) {
+  const isTablet = useScreenSize().width <= screensizeInt.tablet;
+
   return (
     <>
       <P
@@ -12,8 +16,9 @@ export default function Accounts({ newData }) {
         color="black"
         textAlign="left"
         marginTop="40px"
-        padding="15px 0px"
+        padding={isTablet ? "30px 10px" : "15px 0px"}
         borderTop="1px solid #999"
+        margin-top={isTablet ? "50px" : null}
       >
         My Accounts
       </P>

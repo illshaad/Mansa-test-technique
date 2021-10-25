@@ -1,6 +1,7 @@
 import React from "react";
 import Compagny from "./Compagny";
 import Accounts from "./Accounts";
+import { ContainerInformation } from "../dashboard/index.style";
 export default function Information({
   first,
   denomination,
@@ -9,9 +10,7 @@ export default function Information({
   newData,
 }) {
   return (
-    <div
-      style={{ marginTop: "20px", flexDirection: "column", alignSelf: "start" }}
-    >
+    <ContainerInformation>
       <Compagny
         first={first}
         denomination={denomination}
@@ -19,6 +18,6 @@ export default function Information({
         geo_adresse={geo_adresse}
       />
       <Accounts newData={newData} />
-    </div>
+    </ContainerInformation>
   );
 }
