@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { P, Card } from "../composant/connexion/Connexion.style";
 import { Span } from "../composant/dashboard/index.style";
-import { device } from "../styles/mediaQueriesBreakpoints";
-import ReusedModal from "./ReusedModal";
+import { device } from "../utils/mediaQueriesBreakpoints";
+import Modal from "../composant/dashboard/Modal";
 
 export default function ReusedCard({
   accountId,
@@ -21,6 +21,7 @@ export default function ReusedCard({
   textAlign,
   device,
   dataModal,
+  isMobile,
 }) {
   return (
     <CardStyle margin={margin} width={width} height={height} padding={padding}>
@@ -36,7 +37,13 @@ export default function ReusedCard({
       <P textAlign={textAlign}>
         {informationThree} <Span>{dataThree}</Span>
       </P>
-      {accountId && <ReusedModal dataModal={dataModal} accountId={accountId} />}
+      {accountId && (
+        <Modal
+          dataModal={dataModal}
+          accountId={accountId}
+          isMobile={isMobile}
+        />
+      )}
     </CardStyle>
   );
 }

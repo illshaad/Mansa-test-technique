@@ -2,12 +2,14 @@ import React from "react";
 import ReusedCard from "../../utils/ReusedCard";
 import { P } from "../connexion/Connexion.style";
 import { FlexElement } from "./index.style";
-import { screensizeInt } from "../../styles/mediaQueriesBreakpoints";
-import useScreenSize from "../../hook/useScreenSize";
 
-export default function Compagny({ first, denomination, siret, geo_adresse }) {
-  const isTablet = useScreenSize().width <= screensizeInt.tablet;
-
+export default function Compagny({
+  first,
+  denomination,
+  siret,
+  geo_adresse,
+  isTablet,
+}) {
   return (
     <>
       <FlexElement>

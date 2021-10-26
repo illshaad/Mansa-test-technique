@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@jest/environment": "^27.3.1",
     "axios": "^0.23.0",
+    "dotenv": "^10.0.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -17,8 +21,12 @@
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.3.1",
     "babel-plugin-styled-components": "^1.13.3",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "jest": "^27.3.1"
   }
 }

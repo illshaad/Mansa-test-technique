@@ -1,29 +1,24 @@
 import React, { useState } from "react";
-import { P, Button } from "../composant/connexion/Connexion.style";
+import { P, Button } from "../connexion/Connexion.style";
 import Modal from "react-modal";
-import {
-  ContainerMenu,
-  FlexElement,
-  Span,
-} from "../composant/dashboard/index.style";
+import { ContainerMenu, FlexElement, Span } from "../dashboard/index.style";
+import { getDataAccountsId } from "../../service/getApi";
 
-import { getDataAccountsId } from "../service/getApi";
+export default function ComponentModal({ accountId, isMobile }) {
+  const customStyles = {
+    content: {
+      boxShadow: "0px 0px 3px #6347d1",
+      width: isMobile ? "330px" : "500px",
+      height: "500px",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
 
-const customStyles = {
-  content: {
-    boxShadow: "0px 0px 3px #6347d1",
-    width: "500px",
-    height: "500px",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
-
-export default function ReusedCard({ accountId }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [myNewData, setMyNewData] = useState([]);
   const openModal = () => setIsOpen(true);
@@ -84,7 +79,7 @@ export default function ReusedCard({ accountId }) {
             ))}
           </FlexElement>
         </ContainerMenu>
-        <button onClick={closeModal}>close</button>
+        <Button onClick={closeModal}>Close</Button>
       </Modal>
     </>
   );

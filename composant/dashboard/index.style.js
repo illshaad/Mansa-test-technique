@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../styles/mediaQueriesBreakpoints";
+import { device } from "../../utils/mediaQueriesBreakpoints";
 
 export const ContainerMenu = styled.header`
   background-color: white;
@@ -24,6 +24,7 @@ export const FlexComponent = styled.div`
   gap: ${({ gap }) => gap || "5px"};
   flex-wrap: ${({ flexWrap }) => flexWrap || null};
   flex-direction: ${({ flexDirection }) => flexDirection || null};
+  align-items: ${({ alignItem }) => alignItem || null};
   @media ${device.tablet} {
     align-items: center;
     gap: "10px";
@@ -45,7 +46,7 @@ export const GridElement = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: ${({ gap }) => gap || "5px"};
-  padding: 5px;
+  padding: 15px 0px 30px 0px;
   @media ${device.tablet} {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -59,7 +60,7 @@ export const GridElement = styled.div`
 export const Span = styled.span`
   font-weight: 500;
   color: ${({ color }) => color || "#6347d1"};
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     font-size: 14px;
   }
 `;
@@ -70,5 +71,8 @@ export const ContainerInformation = styled.div`
   align-self: start;
   @media ${device.tablet} {
     width: 100%;
+  }
+  @media ${device.mobileL} {
+    margin-top: 0px;
   }
 `;

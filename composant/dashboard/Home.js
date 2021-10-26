@@ -1,13 +1,9 @@
 import Menu from "./Menu";
-import { Logo } from "../connexion/Connexion.style";
 import { FlexComponent } from "./index.style";
 import Information from "./Information";
 import { useRouter } from "next/router";
-import { device, screensizeInt } from "../../styles/mediaQueriesBreakpoints";
-import useScreenSize from "../../hook/useScreenSize";
 
-export default function Home({ siretMansa, dataAccounts }) {
-  const isTablet = useScreenSize().width <= screensizeInt.tablet;
+export default function Home({ siretMansa, dataAccounts, isTablet, isMobile }) {
   const { denomination } = siretMansa.unite_legale;
   const { siret, geo_adresse } = siretMansa.unite_legale.etablissement_siege;
   const router = useRouter();
@@ -28,13 +24,22 @@ export default function Home({ siretMansa, dataAccounts }) {
       backgroundColor="#f5f5f7"
       flexDirection={isTablet ? "column" : null}
     >
-      <Menu first={first} last={last} title={title} picture={picture} />
+      <Menu
+        first={first}
+        last={last}
+        title={title}
+        picture={picture}
+        isTablet={isTablet}
+        isMobile={isMobile}
+      />
       <Information
         first={first}
         denomination={denomination}
         siret={siret}
         geo_adresse={geo_adresse}
         newData={formatData}
+        isTablet={isTablet}
+        isMobile={isMobile}
       />
     </FlexComponent>
   );

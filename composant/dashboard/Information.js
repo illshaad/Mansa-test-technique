@@ -8,6 +8,8 @@ export default function Information({
   siret,
   geo_adresse,
   newData,
+  isTablet,
+  isMobile,
 }) {
   return (
     <ContainerInformation>
@@ -16,8 +18,9 @@ export default function Information({
         denomination={denomination}
         siret={siret}
         geo_adresse={geo_adresse}
+        isTablet={isTablet}
       />
-      <Accounts newData={newData} />
+      <Accounts newData={newData} isTablet={isTablet} isMobile={isMobile} />
     </ContainerInformation>
   );
 }

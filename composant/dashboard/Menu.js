@@ -1,26 +1,30 @@
 import React from "react";
-import { ContainerMenu, FlexComponent, FlexElement, Span } from "./index.style";
+import { ContainerMenu, FlexComponent, Span } from "./index.style";
 import { ImageElement, P, Logo } from "../connexion/Connexion.style";
 import Image from "next/image";
-import { device, screensizeInt } from "../../styles/mediaQueriesBreakpoints";
 
-import useScreenSize from "../../hook/useScreenSize";
-
-export default function Menu({ first, last, title, picture }) {
-  const isTablet = useScreenSize().width <= screensizeInt.tablet;
-  const isMobile = useScreenSize().width <= screensizeInt.mobileM;
-
+export default function Menu({
+  first,
+  last,
+  title,
+  picture,
+  isTablet,
+  isMobile,
+}) {
   return (
     <ContainerMenu
       flexDirection={isTablet ? "row" : "column"}
-      height={isTablet ? "90px" : "100vh"}
+      height={isTablet ? "90px" : null}
       width={isTablet ? "100%" : "14%"}
       paddingTop={!isTablet ? "30px" : null}
     >
-      <div>
+      <>
         <Logo>Mansa</Logo>
-      </div>
-      <FlexComponent flexDirection={isTablet ? "row" : "column"}>
+      </>
+      <FlexComponent
+        flexDirection={isTablet ? "row" : "column"}
+        alignItem="center"
+      >
         {!isMobile ? (
           <ImageElement
             img
@@ -66,10 +70,3 @@ export default function Menu({ first, last, title, picture }) {
     </ContainerMenu>
   );
 }
-
-// export const FlexComponentStyle = styled(FlexComponent)`
-//   flex-direction: column;
-//   @media ${device.tablet} {
-//     flex-direction: row;
-//   }
-// `;

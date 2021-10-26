@@ -33,7 +33,7 @@ export default function Connexion({ user }) {
           {first} {last}
         </Name>
         <Button
-          cursor={"pointer"}
+          cursor="pointer"
           onClick={() =>
             router.push(
               `/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`

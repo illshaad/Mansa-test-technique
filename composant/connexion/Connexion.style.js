@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../styles/mediaQueriesBreakpoints";
+import { device } from "../../utils/mediaQueriesBreakpoints";
 
 export const Container = styled.div`
   height: 100vh;
@@ -18,8 +18,8 @@ export const Card = styled.div`
   @media ${device.tablet} {
     height: 190px;
   }
-  @media ${device.mobileM} {
-    height: 210px;
+  @media ${device.mobileL} {
+    height: 170px;
     width: 330px;
   }
 `;
@@ -48,6 +48,9 @@ export const P = styled.p`
   @media ${device.tablet} {
     font-size: 18px;
   }
+  @media ${device.mobileL} {
+    font-size: 14px;
+  }
 `;
 
 export const Name = styled.p`
@@ -61,8 +64,8 @@ export const Logo = styled.div`
   font-size: 40px;
   margin-left: ${({ marginLeft }) => marginLeft || null};
   padding-top: ${({ paddingTop }) => paddingTop || null};
-  @media ${device.mobileM} {
-    font-size: 18px;
+  @media ${device.mobileL} {
+    font-size: 16px;
     font-weight: 800;
   }
 `;

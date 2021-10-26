@@ -2,12 +2,8 @@ import React from "react";
 import ReusedCard from "../../utils/ReusedCard";
 import { P } from "../connexion/Connexion.style";
 import { GridElement } from "./index.style";
-import { screensizeInt } from "../../styles/mediaQueriesBreakpoints";
-import useScreenSize from "../../hook/useScreenSize";
 
-export default function Accounts({ newData }) {
-  const isTablet = useScreenSize().width <= screensizeInt.tablet;
-
+export default function Accounts({ newData, isTablet, isMobile }) {
   return (
     <>
       <P
@@ -40,6 +36,7 @@ export default function Accounts({ newData }) {
               data={e.accountNumber}
               dataTwo={e.current}
               device={e.currency}
+              isMobile={isMobile}
             />
           </>
         ))}
