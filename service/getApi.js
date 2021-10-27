@@ -4,6 +4,7 @@ const getDataUserRandom = async () => {
   const { data: dataUser } = await Axios.get(
     `${process.env.NEXT_PUBLIC_URL_RANDOM_USER}/?results=1??nat=gb`
   );
+
   return dataUser;
 };
 
