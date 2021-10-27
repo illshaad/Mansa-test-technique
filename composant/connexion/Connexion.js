@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import Link from "next/link";
 import {
   Container,
   Card,
@@ -17,6 +17,12 @@ export default function Connexion({ user }) {
   const { first, last, title } = name;
   const picture = user.results[0].picture.large;
 
+  const redirects = (title, first, last, picture) => {
+    return router.push(
+      `/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`
+    );
+  };
+
   return (
     <Container>
       <header>
@@ -33,12 +39,8 @@ export default function Connexion({ user }) {
           {first} {last}
         </Name>
         <Button
-          cursor="pointer"
-          onClick={() =>
-            router.push(
-              `/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`
-            )
-          }
+          onClick={() => redirects(title, first, last, picture)}
+          href={`/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`}
         >
           My dashboard
         </Button>
