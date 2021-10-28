@@ -79,7 +79,9 @@ export default function ComponentModal({ accountId, isMobile }) {
             ))}
           </FlexElement>
         </ContainerMenu>
-        <Button onClick={closeModal}>Close</Button>
+        <Button cursor="pointer" onClick={closeModal}>
+          Close
+        </Button>
       </Modal>
     </>
   );

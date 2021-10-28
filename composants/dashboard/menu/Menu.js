@@ -1,7 +1,6 @@
 import React from "react";
-import { ContainerMenu, FlexComponent, Span } from "./index.style";
-import { ImageElement, P, Logo } from "../connexion/Connexion.style";
-import Image from "next/image";
+import { ContainerMenu, FlexComponent, SpanMenu } from "../index.style";
+import { ImageElement, P, Logo } from "../../connexion/Connexion.style";
 
 export default function Menu({
   first,
@@ -48,23 +47,13 @@ export default function Menu({
         textAlign="start"
       >
         <div>
-          {!isTablet ? (
-            <Image src="/layout.png" alt="layout" width={18} height={18} />
-          ) : null}
-
-          <Span>Accounts</Span>
+          <SpanMenu>Accounts</SpanMenu>
         </div>
         <div>
-          {!isTablet ? (
-            <Image src="/layout.png" alt="layout" width={18} height={18} />
-          ) : null}
-          <Span>Foo</Span>
+          <P>Foo</P>
         </div>
         <div>
-          {!isTablet ? (
-            <Image src="/layout.png" alt="layout" width={18} height={18} />
-          ) : null}
-          <Span>Bar</Span>
+          <P>Bar</P>
         </div>
       </FlexComponent>
     </ContainerMenu>

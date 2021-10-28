@@ -46,7 +46,7 @@ export const GridElement = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: ${({ gap }) => gap || "5px"};
-  padding: 15px 0px 30px 0px;
+  padding: 15px 0px 70px 0px;
   @media ${device.tablet} {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -60,6 +60,17 @@ export const GridElement = styled.div`
 export const Span = styled.span`
   font-weight: 500;
   color: ${({ color }) => color || "#6347d1"};
+  @media ${device.mobileL} {
+    font-size: 14px;
+  }
+`;
+
+export const SpanMenu = styled.span`
+  font-weight: 500;
+  color: #6347d1;
+  border: 1px solid #6347d1;
+  border-radius: 5px;
+  padding: 0 10px;
   @media ${device.mobileL} {
     font-size: 14px;
   }

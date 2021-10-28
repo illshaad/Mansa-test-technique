@@ -39,8 +39,8 @@ export default function Connexion({ user }) {
           {first} {last}
         </Name>
         <Button
+          cursor="pointer"
           onClick={() => redirects(title, first, last, picture)}
-          href={`/dashboard?title=${title}&first=${first}&last=${last}&picture=${picture}`}
         >
           My dashboard
         </Button>

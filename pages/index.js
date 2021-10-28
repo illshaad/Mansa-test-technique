@@ -1,4 +1,4 @@
-import Connexion from "../composant/connexion/Connexion";
+import Connexion from "../composants/connexion/Connexion";
 import { getDataUserRandom } from "../service/getApi";
 
 export default function Home({ userRandom }) {

@@ -1,7 +1,7 @@
 import React from "react";
-import ReusedCard from "../../utils/ReusedCard";
-import { P } from "../connexion/Connexion.style";
-import { FlexElement } from "./index.style";
+import ReusedCard from "../../../reused/ReusedCard";
+import { P } from "../../connexion/Connexion.style";
+import { FlexElement } from "../index.style";
 
 export default function Compagny({
   first,

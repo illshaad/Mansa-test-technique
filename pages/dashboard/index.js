@@ -1,4 +1,4 @@
-import Home from "../../composant/dashboard/Home";
+import Home from "../../composants/dashboard/home/Home";
 
 import {
   getDataUserRandom,

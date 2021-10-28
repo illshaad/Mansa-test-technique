@@ -1,6 +1,6 @@
-import Menu from "./Menu";
-import { FlexComponent } from "./index.style";
-import Information from "./Information";
+import Menu from "../menu/Menu";
+import { FlexComponent } from "../index.style";
+import Information from "../information/Information";
 import { useRouter } from "next/router";
 
 export default function Home({ siretMansa, dataAccounts, isTablet, isMobile }) {

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { P, Card } from "../composant/connexion/Connexion.style";
-import { Span } from "../composant/dashboard/index.style";
+import { P, Card } from "../composants/connexion/Connexion.style";
+import { Span } from "../composants/dashboard/index.style";
 import { device } from "../utils/mediaQueriesBreakpoints";
-import Modal from "../composant/dashboard/Modal";
+import Modal from "../composants/modal/Modal";
 
 export default function ReusedCard({
   accountId,

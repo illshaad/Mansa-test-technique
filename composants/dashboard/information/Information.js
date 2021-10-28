@@ -1,7 +1,7 @@
 import React from "react";
-import Compagny from "./Compagny";
-import Accounts from "./Accounts";
-import { ContainerInformation } from "../dashboard/index.style";
+import Compagny from "../compagny/Compagny";
+import Accounts from "../accounts/Accounts";
+import { ContainerInformation } from "../index.style";
 export default function Information({
   first,
   denomination,

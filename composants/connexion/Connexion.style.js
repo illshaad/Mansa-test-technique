@@ -47,6 +47,7 @@ export const P = styled.p`
   border-top: ${({ borderTop }) => borderTop || null};
   @media ${device.tablet} {
     font-size: 18px;
+    margin-top: 18px;
   }
   @media ${device.mobileL} {
     font-size: 14px;
