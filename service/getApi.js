@@ -1,25 +1,24 @@
 import Axios from "axios";
 
 const getDataUserRandom = async () => {
-  const { data: dataUser } = await Axios.get(
+  const { data: dataUser, status } = await Axios.get(
     `${process.env.NEXT_PUBLIC_URL_RANDOM_USER}/?results=1??nat=gb`
   );
-
-  return dataUser;
+  return { dataUser, status };
 };
 
 const getDataSiret = async () => {
-  const { data: dataSiret } = await Axios.get(
+  const { data: dataSiret, status } = await Axios.get(
     `${process.env.NEXT_PUBLIC_URL_SIRET}`
   );
-  return dataSiret;
+  return { dataSiret, status };
 };
 
 const getDataAccounts = async () => {
-  const { data: dataAccounts } = await Axios.get(
+  const { data: dataAccounts, status } = await Axios.get(
     `${process.env.NEXT_PUBLIC_URL_ACCOUNTS}`
   );
-  return dataAccounts;
+  return { dataAccounts, status };
 };
 
 const getDataAccountsId = async (idAccount) => {
