@@ -4,12 +4,14 @@ import Information from "./Information";
 import { useRouter } from "next/router";
 
 export default function Home({ siretMansa, dataAccounts, isTablet, isMobile }) {
-  const { denomination } = siretMansa.unite_legale;
-  const { siret, geo_adresse } = siretMansa.unite_legale.etablissement_siege;
+  console.log(dataAccounts);
+  const { denomination } = siretMansa.dataSiret.unite_legale;
+  const { siret, geo_adresse } =
+    siretMansa.dataSiret.unite_legale.etablissement_siege;
   const router = useRouter();
   const { first, last, title, picture } = router.query;
 
-  const formatData = dataAccounts.map((e) => {
+  const formatData = dataAccounts.dataAccounts.map((e) => {
     return {
       accountId: e.account_id,
       accountNumber: e.account_number,
