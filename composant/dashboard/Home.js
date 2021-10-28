@@ -4,7 +4,6 @@ import Information from "./Information";
 import { useRouter } from "next/router";
 
 export default function Home({ siretMansa, dataAccounts, isTablet, isMobile }) {
-  console.log(dataAccounts);
   const { denomination } = siretMansa.dataSiret.unite_legale;
   const { siret, geo_adresse } =
     siretMansa.dataSiret.unite_legale.etablissement_siege;
