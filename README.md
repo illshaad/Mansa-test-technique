@@ -35,3 +35,5 @@ NextJs Styled Component
 ## Les testes unitaires
 
 Pour moi les tests unitaires c'est une premiere j'ai trouvé cela intéressant à réaliser.
+
+PS : J'ai remarqué des données positives hors qu'elle était négative...
