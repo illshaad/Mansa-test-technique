@@ -10,18 +10,20 @@ describe("check .env", () => {
 
   describe("test api randomuser ", () => {
     const user = {
-      results: [
-        {
-          name: {
-            first: "jean",
-            last: "marc",
-            title: "mr",
+      dataUser: {
+        results: [
+          {
+            name: {
+              first: "jean",
+              last: "marc",
+              title: "mr",
+            },
+            picture: {
+              large: `https://randomuser.me/api/portraits/women/28.jpg`,
+            },
           },
-          picture: {
-            large: `https://randomuser.me/api/portraits/women/28.jpg`,
-          },
-        },
-      ],
+        ],
+      },
     };
     it("should render logo text", () => {
       render(<Connexion user={user} />);
@@ -31,7 +33,9 @@ describe("check .env", () => {
     it("should render first and last string", () => {
       render(<Connexion user={user} />);
       const information = screen.getByText(
-        user.results[0].name.first + " " + user.results[0].name.last
+        user.dataUser.results[0].name.first +
+          " " +
+          user.dataUser.results[0].name.last
       );
       expect(information).toBeInTheDocument();
     });

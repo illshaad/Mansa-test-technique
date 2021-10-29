@@ -46,7 +46,6 @@ describe("fetchData api accounts", () => {
       };
     });
     const checkTypeData = checkMultipProperty.map((e) => {
-      console.log(e);
       expect(typeof e.account_id && typeof e.currency).toBe("string");
       expect(typeof e.current).toEqual("number");
       return { ...e };

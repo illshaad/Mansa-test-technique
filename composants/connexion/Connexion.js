@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import {
   Container,
   Card,
@@ -13,9 +12,9 @@ import {
 
 export default function Connexion({ user }) {
   const router = useRouter();
-  const { name } = user.dataUser.results[0];
+  const { name } = user?.dataUser?.results[0];
   const { first, last, title } = name;
-  const picture = user.dataUser.results[0].picture.large;
+  const picture = user?.dataUser?.results[0]?.picture.large;
 
   const redirects = (title, first, last, picture) => {
     return router.push(
