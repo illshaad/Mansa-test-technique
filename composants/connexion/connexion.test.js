@@ -4,8 +4,10 @@ import Connexion from "./Connexion";
 
 describe("check .env", () => {
   it("should render environement file", () => {
-    const env = process.env.NEXT_PUBLIC_URL_RANDOM_USER;
-    expect(env).toBeDefined();
+    const envUser = process.env.NEXT_PUBLIC_URL_RANDOM_USER;
+    const envSiret = process.env.NEXT_PUBLIC_URL_SIRET;
+    const envAccounts = process.env.NEXT_PUBLIC_URL_ACCOUNTS;
+    expect(envUser && envSiret && envAccounts).toBeDefined();
   });
 
   describe("test api randomuser ", () => {
